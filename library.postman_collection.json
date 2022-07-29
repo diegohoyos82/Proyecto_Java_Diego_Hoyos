@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "fa2856ba-7ac4-4475-b199-b374cd4d9c43",
+		"name": "library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/generales/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"generales",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1_ObtenerTodosLosLibros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"bookId\": \"1658873643980\",\r\n        \"title\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",\r\n        \"description\": \"BBBBBBBBBBBBB\",\r\n        \"author\": \"Dios\",\r\n        \"price\": 88000.0,\r\n        \"qty\": 1\r\n    }\r\n\t\r\n    {\r\n        \"bookId\": \"123\",\r\n        \"title\": \"Hola Mundo...\",\r\n        \"description\": \"Hola\",\r\n        \"author\": \"Pepito\",\r\n        \"price\": 125800.0,\r\n        \"qty\": 1\r\n    }\r\n\t\r\n    {\r\n        \"bookId\": \"1658873623988\",\r\n        \"title\": \"100 años de soledad\",\r\n        \"description\": \"Novela colombiana\",\r\n        \"author\": \"Dios\",\r\n        \"price\": 88000.0,\r\n        \"qty\": 1\r\n    }\r\n\t\r\n    {\r\n        \"bookId\": \"1658873633625\",\r\n        \"title\": \"AAAAAAAAAAAAAAAAA\",\r\n        \"description\": \"Novela colombiana\",\r\n        \"author\": \"Dios\",\r\n        \"price\": 88000.0,\r\n        \"qty\": 1\r\n    }\r\n\t\r\n\t{\r\n        \"bookId\": \"987\",\r\n        \"title\": \"Viaje al fin de la noche\",\r\n        \"description\": \"1932\",\r\n        \"author\": \"Louis-Ferdinand Céline\",\r\n        \"price\": 133500,\r\n        \"qty\": 23\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/library/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"library",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_ObtenerUnLibro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/library/books/987",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"library",
+						"books",
+						"987"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3_ObtenerLibrosDeAutor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/library/books/author?author=Dios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"library",
+						"books",
+						"author"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Dios"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_AgregarUnLibro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"bookId\": \"987\",\r\n        \"title\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",\r\n        \"description\": \"BBBBBBBBBBBBB\",\r\n        \"author\": \"Dios\",\r\n        \"price\": 123500,\r\n        \"qty\": 100\r\n    }\r\n\t\r\n    {\r\n        \"bookId\": \"123\",\r\n        \"title\": \"Hola Mundo...\",\r\n        \"description\": \"Hola\",\r\n        \"author\": \"Pepito\",\r\n        \"price\": 125800,\r\n        \"qty\": 23\r\n    }\r\n\t\r\n    {\r\n        \"bookId\": null,\r\n        \"title\": \"100 años de soledad\",\r\n        \"description\": \"Novela colombiana\",\r\n        \"author\": \"Dios\",\r\n        \"price\": 88000,\r\n        \"qty\": 18\r\n    }\r\n\t\r\n    {\r\n        \"bookId\": null,\r\n        \"title\": \"AAAAAAAAAAAAAAAAA\",\r\n        \"description\": \"abcdefghijklmnñopqrstuvwxyz1234567890\",\r\n        \"author\": \"Anónimo\",\r\n        \"price\": 88700,\r\n        \"qty\": 23\r\n    }\r\n\t\r\n\t{\r\n        \"bookId\": \"987\",\r\n        \"title\": \"Viaje al fin de la noche\",\r\n        \"description\": \"1932\",\r\n        \"author\": \"Louis-Ferdinand Céline\",\r\n        \"price\": 133500,\r\n        \"qty\": 47\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/library/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"library",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5_ActualizarUnLibro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"bookId\": \"123\",\r\n        \"title\": \"Actualizando el libro 888888\",\r\n        \"description\": \"Actualizando rl libro 888888\",\r\n        \"author\": \"No lo sabemos\",\r\n        \"price\": 123456789,\r\n        \"qty\": 999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/library/books/12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"library",
+						"books",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_BorrarUnLibro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/library/books/987",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"library",
+						"books",
+						"987"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
