@@ -53,8 +53,7 @@ public class LibraryController {
     public String updateBook(@RequestBody Book book) {
         Book bookVar = memoryBookRepository.get(book.getBookId());
         memoryBookRepository.save(book);
-        return "Se realizo la actualizacion del libro:" + bookVar; //+ "Antes:   " + bookVar + "\n" + "Después: " + book;
-        //return book;
+        return "Se realizo la actualizacion del libro:" + bookVar; 
     }
 
     //Eliminar Libro

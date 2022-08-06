@@ -31,15 +31,10 @@ public List<Book> getAll() {
 @Override
 public Book get(String bookId) {
     // TODO Auto-generated method stub
-    //if (booksMap.get(bookId) equals(obj) null)
-    //{
+    
     return booksMap.get(bookId);
-     /* }    
-    else
-    {
-        System.out.println("Libro no encontrado");
-        return booksMap.get(bookId);
-    }*/
+      
+   
 }
 
 @Override
@@ -61,6 +56,13 @@ public List<Book> findByAuthor(String author) {
 }
 
 @Override
+public List<Book> findByTitle(String title) {
+    return booksMap.values().stream()
+        .filter(book -> book.getTitle().toLowerCase().indexOf(title.toLowerCase()) >= 0)
+        .collect(Collectors.toList());
+}
+
+@Override
 public Book save(Book book) {
     if (book.getBookId() == null)
     {
@@ -75,6 +77,7 @@ public Book delete(String bookId) {
     
     return booksMap.remove(bookId);
 }
+
 
     
 }
